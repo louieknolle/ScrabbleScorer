@@ -8,7 +8,6 @@ namespace ScrabbleScorer
   {
    public static void Main() 
    {
-    Console.WriteLine("Welcome to the premier Scrabble score checker!");
     Console.WriteLine("Please enter a word to see the Scrabble value!");
     string userInput = Console.ReadLine();
     ScrabbleWord newWord = new ScrabbleWord(userInput);
@@ -16,8 +15,16 @@ namespace ScrabbleScorer
     int wordScore = newWord.FindWordScore();
     Console.WriteLine("That word is worth " + wordScore + " points!");
 
-    Main();
+    Console.WriteLine("Enter another word or exit? ['Y' for yes or 'Enter' for exit");
+    string response = Console.ReadLine();
+    if (response == "y" || response == "Y")
+    {
+      Main();
+    }
+    else 
+    {
+      Console.WriteLine("Goodbye!");
+    }
+    }
   }
-  
-}
 }

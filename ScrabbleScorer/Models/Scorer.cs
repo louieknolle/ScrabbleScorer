@@ -18,6 +18,12 @@ namespace ScrabbleScorer.Models
 
     public int FindWordScore()
     {
+      if (Input == "") 
+      {
+        return 0;
+      }
+      else 
+      {
       int wordScoreCounter = 0;
       char[] userWordArray = Input.ToUpper().ToCharArray();
       for (int i = 0; i < userWordArray.Length; i++)
@@ -30,7 +36,8 @@ namespace ScrabbleScorer.Models
           }
         }
       }
-      return wordScoreCounter;
+        return wordScoreCounter;
+      }
     }
   }
 }
